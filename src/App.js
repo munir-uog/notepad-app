@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
+import NotesListPage from "./pages/NotesListPage";
+import NotePage from "./pages/NotePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mt-10 flex justify-center items-center w-full">
+      <div className="flex flex-col w-2/5 rounded-md items-center shadow-lg shadow-gray-400">
+        <Routes>
+          <Route path="/" element={<NotesListPage />} />
+          <Route path="/note/:id" element={<NotePage />} />
+        </Routes>
+        {/* <NotesListPage /> */}
+      </div>
     </div>
   );
 }
